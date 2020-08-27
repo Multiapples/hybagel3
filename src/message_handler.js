@@ -7,5 +7,5 @@ module.exports = {
 		const inputtedCommandName = message.content.substr(prefix.length);
 		if (message.client.commandModules.has(inputtedCommandName))
 			return message.client.commandModules.get(inputtedCommandName).execute(message);
-	}
+	},
 };

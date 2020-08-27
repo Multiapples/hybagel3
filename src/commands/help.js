@@ -6,5 +6,5 @@ module.exports = {
 				Array.from(message.client.commandModules.keys())
 				.join(',\n')
 		);
-	}
+	},
 }

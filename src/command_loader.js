@@ -11,5 +11,5 @@ module.exports = {
 	getCommandFileNames() {
 		const FileSystem = require('fs');
 		return FileSystem.readdirSync('./commands').filter(file => file.endsWith('.js'));
-	}
+	},
 };

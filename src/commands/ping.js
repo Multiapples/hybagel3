@@ -3,5 +3,5 @@ module.exports = {
 	description: 'Pings me!',
 	execute(message) {
 		return message.channel.send('poggers');
-	}
+	},
 }
