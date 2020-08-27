@@ -1,0 +1,14 @@
+{
+  "name": "hybagel3",
+  "version": "1.0.0",
+  "description": "A degenerate Discord bot application.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Multiapples",
+  "license": "ISC",
+  "dependencies": {
+    "discord.js": "^12.3.1"
+  }
+}
