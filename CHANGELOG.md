@@ -6,11 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.0.1] - 2020-08-27
+## [0.1.1] - 2020-08-27
 ### Fixed
 - Hybagel now requires the prefix listed in config.js
 
-## [1.0.0] - 2020-08-27
+## [0.1.0] - 2020-08-27
 ### Added
 - Ping command (invokes a response from Hybagel)
 - Dynamic help command (simply lists all commands as of now)
