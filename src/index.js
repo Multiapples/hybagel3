@@ -1,5 +1,5 @@
 const Discord = require('discord.js');
-const Config = require('./config.json');
+const { token } = require('./config.json');
 const MessageHandler = require('./message_handler.js');
 const CommandLoader = require('./command_loader.js');
 
@@ -14,4 +14,4 @@ client.on('message', message => {
 	MessageHandler.handleMessage(message);
 });
 
-client.login(Config.token);
+client.login(token);
