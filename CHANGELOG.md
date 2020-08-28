@@ -6,15 +6,23 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.4] - 2020-08-27
+### Tidied
+- Moved private functions outside module.exports.
+
+## [0.1.3] - 2020-08-27
+### Added
+- Argument extraction from commands; though, as of now, no commands utilize arguments.
+
 ## [0.1.2] - 2020-08-27
-### Fixed
-- Trailing Commas
+### Tidied
+- Added Trailing commas.
 
 ## [0.1.1] - 2020-08-27
 ### Added
-- Hybagel now requires the prefix listed in config.js
+- Hybagel now requires the prefix listed in config.js.
 
 ## [0.1.0] - 2020-08-27
 ### Added
-- Ping command (invokes a response from Hybagel)
-- Dynamic help command (simply lists all commands as of now)
+- Ping command (invokes a response from Hybagel).
+- Dynamic help command (simply lists all commands as of now).
