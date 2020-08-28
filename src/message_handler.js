@@ -4,26 +4,26 @@ module.exports = {
 	handleMessage(message) {
 		if (message.author.bot) return;
 		if (!message.content.startsWith(prefix)) return
-		const nameAndArgs = this.stripNameAndArguments(message);
-		console.log(nameAndArgs);
+		const nameAndArgs = stripNameAndArguments(message);
 		if (message.client.commandModules.has(nameAndArgs.name))
-			return this.executeCommand(message, nameAndArgs.name, nameAndArgs.args);
-	},
-	executeCommand(message, commandName, args) {
-		return this.getCommand(message, commandName).execute(message, args);
-	},
-	getCommand(message, commandName) {
-		return message.client.commandModules.get(commandName);
-	},
-	stripNameAndArguments(message) {
-		const args = this.splitMessage(message);
-		const name = args.shift().slice(prefix.length);
-		return {
-			name: name,
-			args: args,
-		};
-	},
-	splitMessage(message) {
-		return message.content.trim().split(/ +/);
+			return executeCommand(message, nameAndArgs.name, nameAndArgs.args);
 	},
 };
+
+function executeCommand(message, commandName, args) {
+	return getCommand(message, commandName).execute(message, args);
+}
+function getCommand(message, commandName) {
+	return message.client.commandModules.get(commandName);
+}
+function stripNameAndArguments(message) {
+	const args = splitMessage(message);
+	const name = args.shift().slice(prefix.length);
+	return {
+		name: name,
+		args: args,
+	};
+}
+function splitMessage(message) {
+	return message.content.trim().split(/ +/);
+}
