@@ -4,8 +4,26 @@ module.exports = {
 	handleMessage(message) {
 		if (message.author.bot) return;
 		if (!message.content.startsWith(prefix)) return
-		const inputtedCommandName = message.content.substr(prefix.length);
-		if (message.client.commandModules.has(inputtedCommandName))
-			return message.client.commandModules.get(inputtedCommandName).execute(message);
+		const nameAndArgs = this.stripNameAndArguments(message);
+		console.log(nameAndArgs);
+		if (message.client.commandModules.has(nameAndArgs.name))
+			return this.executeCommand(message, nameAndArgs.name, nameAndArgs.args);
+	},
+	executeCommand(message, commandName, args) {
+		return this.getCommand(message, commandName).execute(message, args);
+	},
+	getCommand(message, commandName) {
+		return message.client.commandModules.get(commandName);
+	},
+	stripNameAndArguments(message) {
+		const args = this.splitMessage(message);
+		const name = args.shift().slice(prefix.length);
+		return {
+			name: name,
+			args: args,
+		};
+	},
+	splitMessage(message) {
+		return message.content.trim().split(/ +/);
 	},
 };
