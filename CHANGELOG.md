@@ -19,7 +19,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Added Trailing commas.
 
 ## [0.1.1] - 2020-08-27
-### Added
+### Changed
 - Hybagel now requires the prefix listed in config.js.
 
 ## [0.1.0] - 2020-08-27
