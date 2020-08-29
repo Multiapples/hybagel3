@@ -12,7 +12,7 @@ module.exports = {
 
 function executeCommand(message, nameAndArgString) {
 	const command = getCommand(message, nameAndArgString.name)
-	if (command.doSplitArguments) {
+	if (command.doSplitArgs) {
 		command.execute(message, splitArgumentString(nameAndArgString.argString));
 	} else {
 		command.execute(message, nameAndArgString.argString);
