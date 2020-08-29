@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ## [0.1.4] - 2020-08-27
+### Added
+- Redundant error checking to ensure that each command has every property value.
+
+## [0.1.4] - 2020-08-27
 ### Tidied
 - Moved private functions outside module.exports.
 
