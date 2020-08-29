@@ -17,5 +17,11 @@ function getNameToModuleMap(commandFileNames) {
 }
 function addCommandFileToMap(map, fileName) {
 	const module = require(`./commands/${fileName}`);
+	checkThatCommandMatchesTemplate(module, fileName);
 	map.set(module.name, module);
+}
+function checkThatCommandMatchesTemplate(module, fileName) {
+	if (module.name === null) throw `command name is null in ${fileName}`;
+	if (module.description === null) throw `command description is null in ${fileName}`;
+	if (module.name + '.js' !== fileName) throw `command name is not equal to file name in ${fileName}`;
 }
