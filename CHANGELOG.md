@@ -6,7 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.1.4] - 2020-08-27
+## [0.1.6] - 2020-08-29
+### Added
+- Support for commands that don't split the arguments (for example, commands that require a string input that can include spaces).
+
+## [0.1.5] - 2020-08-29
 ### Added
 - Redundant error checking to ensure that each command has every property value.
 
