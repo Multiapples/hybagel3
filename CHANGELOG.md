@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.0] - 2020-08-29
+### Added
+- Version command (get the current version of Hybagel).
+
 ## [0.1.6] - 2020-08-29
 ### Added
 - Support for commands that don't split the arguments (for example, commands that require a string input that can include spaces).
