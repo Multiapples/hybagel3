@@ -21,7 +21,12 @@ function addCommandFileToMap(map, fileName) {
 	map.set(module.name, module);
 }
 function checkThatCommandMatchesTemplate(module, fileName) {
-	if (module.name === null) throw `command name is null in ${fileName}`;
-	if (module.description === null) throw `command description is null in ${fileName}`;
-	if (module.name + '.js' !== fileName) throw `command name is not equal to file name in ${fileName}`;
+	checkThatCommandHasVal(module.name, 'name', fileName);
+	checkThatCommandHasVal(module.description, 'description', fileName);
+	checkThatCommandHasVal(module.doSplitArgs, 'doSplitArgs', fileName);
+	if (module.name + '.js' !== fileName) throw `command.name is not equal to file name in ${fileName}`;
+}
+function checkThatCommandHasVal(val, valName, fileName) {
+	if (typeof val === 'undefined') throw `command.${valName} does not exist in ${fileName}`;
+	if (val === null) throw `command.${valName} is null in ${fileName}`;
 }
