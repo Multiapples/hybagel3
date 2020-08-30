@@ -1,34 +1,17 @@
+const CommandHandler = require('./command_handler');
 const { prefix } = require('./config.json');
 
 module.exports = {
 	handleMessage(message) {
-		if (message.author.bot) return;
-		if (!message.content.startsWith(prefix)) return
-		const nameAndArgString = stripNameAndArgumentString(message);
-		if (message.client.commandModules.has(nameAndArgString.name))
-			return executeCommand(message, nameAndArgString);
+		if (doesNotStartWithPrefix(message)) return;
+		if (isAuthorBot(message)) return;
+		CommandHandler.handleCommandCall(message);
 	},
 };
 
-function executeCommand(message, nameAndArgString) {
-	const command = getCommand(message, nameAndArgString.name)
-	if (command.doSplitArgs) {
-		command.execute(message, splitArgumentString(nameAndArgString.argString));
-	} else {
-		command.execute(message, nameAndArgString.argString);
-	}
+function doesNotStartWithPrefix(message) {
+	return !message.content.startsWith(prefix);
 }
-function getCommand(message, commandName) {
-	return message.client.commandModules.get(commandName);
-}
-function stripNameAndArgumentString(message) {
-	const name = message.content.split(' ')[0].slice(prefix.length);
-	const argString = message.content.slice(name.length).trim();
-	return {
-		name: name,
-		argString: argString,
-	};
-}
-function splitArgumentString(argString) {
-	return argString.split(/ +/);
+function isAuthorBot(message) {
+	return message.author.bot;
 }
