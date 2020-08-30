@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.4] - 2020-08-30
+### Fixed
+- Corrected variable name in help.js.
+
 ## [0.2.3] - 2020-08-30
 ### Tidied
 - Rewrote code in message_handler.js.
