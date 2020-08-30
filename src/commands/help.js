@@ -4,7 +4,7 @@ module.exports = {
 	doSplitArgs: true,
 	execute(message, args) {
 		return message.channel.send(
-				Array.from(message.client.commandModules.keys())
+				Array.from(message.client.commands.keys())
 				.join(',\n')
 		);
 	},
