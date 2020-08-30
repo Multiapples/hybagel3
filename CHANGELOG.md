@@ -6,7 +6,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [0.2.2] - 2020-08-30
+## [0.2.2] - 2020-08-29
 ### Fixed
 - Commands now take arguments in .execute().
 
