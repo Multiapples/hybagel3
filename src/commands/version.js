@@ -4,7 +4,7 @@ module.exports = {
 	name: 'version',
 	description: 'Gives you the current version of the bot',
 	doSplitArgs: false,
-	execute(message) {
+	execute(message, args) {
 		return message.channel.send(`Current version: v${version}.`);
 	},
 }
