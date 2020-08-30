@@ -16,10 +16,10 @@ function isolateCommandArgString(message, commandName) {
 	return message.content.slice(prefix.length + commandName.length).trim();
 }
 function isCallingInvalidCommand(message, commandName) {
-	return !message.client.commandModules.has(commandName);
+	return !message.client.commands.has(commandName);
 }
 function callCommand(message, commandName, commandArgString) {
-	const command = message.client.commandModules.get(commandName);
+	const command = message.client.commands.get(commandName);
 	if (command.doSplitArgs) {
 		command.execute(message, commandArgString);
 	} else {

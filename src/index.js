@@ -4,7 +4,7 @@ const MessageHandler = require('./message_handler.js');
 const CommandLoader = require('./command_loader.js');
 
 const client = new Discord.Client();
-client.commandModules = CommandLoader.getCommandModules();
+client.commands = CommandLoader.getCommandModules();
 
 client.once('ready', () => {
 	console.log('Ready!');
