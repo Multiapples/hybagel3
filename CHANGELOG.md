@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.6] - 2020-08-30
+### Tidied
+- Slight organisational and naming consistency changes.
+- Changed enhanced for-loop to .forEach().
+
 ## [0.2.5] - 2020-08-30
 ### Tidied
 - All commands and handlers are now classes.

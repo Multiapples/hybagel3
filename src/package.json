@@ -1,6 +1,6 @@
 {
   "name": "hybagel3",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "A degenerate Discord bot application",
   "main": "index.js",
   "scripts": {
