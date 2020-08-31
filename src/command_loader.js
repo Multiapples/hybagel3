@@ -1,5 +1,5 @@
-module.exports = {
-	getCommandModules() {
+module.exports = class CommandLoader {
+	static getCommandModules() {
 		const commandFileNames = getCommandFileNames();
 		return getNameToModuleMap(commandFileNames);
 	}
@@ -23,7 +23,6 @@ function addCommandFileToMap(map, fileName) {
 function checkThatCommandMatchesTemplate(module, fileName) {
 	checkThatCommandHasVal(module.name, 'name', fileName);
 	checkThatCommandHasVal(module.description, 'description', fileName);
-	checkThatCommandHasVal(module.doSplitArgs, 'doSplitArgs', fileName);
 	if (module.name + '.js' !== fileName) throw new Error(`command.name is not equal to file name in ${fileName}`);
 }
 function checkThatCommandHasVal(val, valName, fileName) {
