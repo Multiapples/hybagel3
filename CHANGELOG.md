@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.5] - 2020-08-30
+### Tidied
+- All commands and handlers are now classes.
+- Split/non-split arguments are now determined with polymorphism rather than an if-else statement.
+
 ## [0.2.4] - 2020-08-30
 ### Fixed
 - Corrected variable name in help.js.
