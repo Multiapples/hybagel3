@@ -1,7 +1,7 @@
 module.exports = class CommandLoader {
 	static getCommandModules() {
 		const commandFileNames = getCommandFileNames();
-		return getNameToModuleMap(commandFileNames);
+		return getNameToCommandMap(commandFileNames);
 	}
 };
 
@@ -9,23 +9,22 @@ function getCommandFileNames() {
 	const FileSystem = require('fs');
 	return FileSystem.readdirSync('./commands').filter(file => file.endsWith('.js'));
 }
-function getNameToModuleMap(commandFileNames) {
+function getNameToCommandMap(commandFileNames) {
 	const commands = new Map();
-	for (const fileName of commandFileNames)
-		addCommandFileToMap(commands, fileName);
+	commandFileNames.forEach(fileName => addCommandToMap(commands, fileName));
 	return commands;
 }
-function addCommandFileToMap(map, fileName) {
+function addCommandToMap(map, fileName) {
 	const module = require(`./commands/${fileName}`);
-	checkThatCommandMatchesTemplate(module, fileName);
+	checkCommandMatchesTemplate(module, fileName);
 	map.set(module.name, module);
 }
-function checkThatCommandMatchesTemplate(module, fileName) {
-	checkThatCommandHasVal(module.name, 'name', fileName);
-	checkThatCommandHasVal(module.description, 'description', fileName);
-	if (module.name + '.js' !== fileName) throw new Error(`command.name is not equal to file name in ${fileName}`);
+function checkCommandMatchesTemplate(module, fileName) {
+	checkThatCommandHasVal(module.name, 'name');
+	checkThatCommandHasVal(module.description, 'description');
+	if (module.name + '.js' !== fileName) throw new Error('command.name is not equal to file name');
 }
-function checkThatCommandHasVal(val, valName, fileName) {
-	if (typeof val === 'undefined') throw new Error(`command.${valName} does not exist in ${fileName}`);
-	if (val === null) throw new Error(`command.${valName} is null in ${fileName}`);
+function checkThatCommandHasVal(val, valName) {
+	if (typeof val === 'undefined') throw new Error(`command.${valName} does not exist`);
+	if (val === null) throw new Error(`command.${valName} is null`);
 }
