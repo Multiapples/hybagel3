@@ -1,4 +1,4 @@
-const stringArgCommand = require('./../command_base_classes/string_arg_command.js');
+const stringArgCommand = require('./../command_base_classes/command/string_arg_command');
 const currentVersion = require('./../config.json').version;
 
 module.exports = class version extends stringArgCommand {
