@@ -6,6 +6,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.2.7] - 2020-09-01
+### Changed
+- SplitCommand and StringCommand now extend from Command.
+
 ## [0.2.6] - 2020-08-30
 ### Tidied
 - Slight organisational and naming consistency changes.
