@@ -6,6 +6,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.0] - 2020-09-01
+### Tidied
+- Removed unnecessary arguments in command.execute()'s.
+- Renamed "module" to "command" in command_loader.js.
+- Command now has static call() command that extending classes will override.
+### Added
+- New CommandCollection class, allowing for the grouping of commands; for example, you can now group all of your anime weeb commands with the word "weeb" and call it with "$weeb waifu your-arguments-here".
+- New Command Collection, testcol, purely for testing the implementation of Command Collections.
+
 ## [0.2.7] - 2020-09-01
 ### Changed
 - SplitCommand and StringCommand now extend from Command.
