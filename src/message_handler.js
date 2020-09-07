@@ -1,4 +1,4 @@
-const CommandHandler = require('./command_handler');
+const CommandHandler = require('./command_handler.js');
 const { prefix } = require('./config.json');
 
 module.exports = class MessageHandler {
