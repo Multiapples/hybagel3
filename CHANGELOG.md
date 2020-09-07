@@ -5,6 +5,15 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+### Added
+- New command, Universal Library - what could it be???
+
+## [0.3.3] - 2020-09-06
+### Fixed
+- Command names (not class names) changed from from PascalCase to snake_case.
+- Fixed matching name checks to work with these new names.
+### Removed
+- testcol; rip 2020-2020.
 
 ## [0.3.2] - 2020-09-06
 ### Fixed
