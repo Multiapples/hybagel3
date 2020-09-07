@@ -1,4 +1,4 @@
-module.exports = class command {
+module.exports = class Command {
 	static call() {
 		throw new Error('call() has not been overridden');
 	}
