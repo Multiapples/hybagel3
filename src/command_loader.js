@@ -22,9 +22,9 @@ function addCommandToMap(map, fileName) {
 function checkCommandMatchesTemplate(command, fileName) {
 	checkThatCommandHasVal(command.name, 'name');
 	checkThatCommandHasVal(command.description, 'description');
-	if (command.name + '.js' !== fileName) throw new Error('command.name is not equal to file name');
+	if (command.name + '.js' !== fileName) throw new Error(`${fileName}.name is not equal to file name`);
 }
 function checkThatCommandHasVal(val, valName) {
-	if (typeof val === 'undefined') throw new Error(`command.${valName} does not exist`);
-	if (val === null) throw new Error(`command.${valName} is null`);
+	if (typeof val === 'undefined') throw new Error(`${fileName}.${valName} does not exist`);
+	if (val === null) throw new Error(`${fileName}.${valName} is null`);
 }
