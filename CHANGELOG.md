@@ -6,6 +6,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.3.2] - 2020-09-06
+### Fixed
+- Class names are now in PascalCase.
+- Added missing '.js' to the path of one of the require() calls.
+
 ## [0.3.1] - 2020-09-03
 ### Fixed
 - License listed in package.json now uses the correct license: MIT.
