@@ -1,0 +1,3 @@
+convert classes back to objects (cuz this is javascript)
+require() handler/manager
+fix convertBase() not working
