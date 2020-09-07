@@ -1,6 +1,6 @@
-const command = require('./../command.js');
+const Command = require('./../command.js');
 
-module.exports = class commandCollection extends command {
+module.exports = class CommandCollection extends Command {
 	static subCommands;
 	static call(message, argString) {
 		if (argString === '') {
